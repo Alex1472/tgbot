@@ -6,3 +6,7 @@ func (c *Commander) Help(message *tgbotapi.Message) {
 	msg := tgbotapi.NewMessage(message.Chat.ID, "/help - help\n"+"/list - list all products")
 	c.bot.Send(msg)
 }
+
+func init() {
+	registeredCommands["help"] = (*Commander).Help
+}
